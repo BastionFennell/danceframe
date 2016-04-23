@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423040343) do
+ActiveRecord::Schema.define(version: 20160423051203) do
+
+  create_table "covers", force: true do |t|
+    t.integer  "offset_x"
+    t.integer  "offset_y"
+    t.string   "source"
+    t.integer  "facebook_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "covers", ["event_id"], name: "index_covers_on_event_id"
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -21,6 +33,9 @@ ActiveRecord::Schema.define(version: 20160423040343) do
     t.datetime "updated_at"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.integer  "cover_id"
   end
+
+  add_index "events", ["cover_id"], name: "index_events_on_cover_id"
 
 end

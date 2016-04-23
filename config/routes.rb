@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
-    resource 'events'
+    get 'events/new' => 'events#create'
+
+    jsonapi_resources :events
+    jsonapi_resources :covers
+
     get 'facebook-events' => 'facebook_events#show'
   end
 

@@ -1,20 +1,7 @@
 class Api::EventsController < ApplicationController
-  def show
-    event = Event.where({facebook_id: params[:facebookId]}).take!
-    json_api = {
-      data: {
-        type: "event",
-        id: event.id,
-        attributes: event
-      }
-    }
-
-    render json: json_api
-  end
-
+  include JSONAPI::ActsAsResourceController
   def create
-    facebook_event = @graph.get_object(params[:data][:attributes]["facebook-id"])
-    binding.pry
+    facebook_event = @graph.get_object(params[:data][:attributes]["facebook-id"], {fields: ['name', 'description', 'end_time', 'start_time', 'cover']})
     event = Event.new({
       name: facebook_event["name"],
       description: facebook_event["description"],
@@ -24,5 +11,19 @@ class Api::EventsController < ApplicationController
     })
 
     event.save();
+
+    cover = Cover.new({
+      offset_x: facebook_event['cover']['offset_x'],
+      offset_y: facebook_event['cover']['offset_y'],
+      source: facebook_event['cover']['source'],
+      facebook_id: facebook_event['cover']['id'],
+      event: event
+    })
+    cover.save();
+
+    event.cover = cover;
+    event.save();
+
+    head :ok
   end
 end
