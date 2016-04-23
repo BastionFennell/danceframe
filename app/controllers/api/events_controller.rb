@@ -18,10 +18,10 @@ class Api::EventsController < ApplicationController
     event = Event.new({
       name: facebook_event["name"],
       description: facebook_event["description"],
-      facebook_id: params[:data][:attributes]["facebook-id"]
+      facebook_id: params[:data][:attributes]["facebook-id"],
+      start_time: facebook_event["start_time"],
+      end_time: facebook_event["end_time"]
     })
-
-    binding.pry
 
     event.save();
   end
