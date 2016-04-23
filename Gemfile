@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 
 gem 'ember-cli-rails'
 gem 'jsonapi-resources'
+gem 'koala', '~> 2.2'
+gem 'pry'
