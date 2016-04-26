@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   namespace :api do
     get 'events/new' => 'events#create'
+    get 'users/:id' => 'users#show'
 
     jsonapi_resources :events
     jsonapi_resources :covers
+    jsonapi_resources :users
 
     get 'facebook-events' => 'facebook_events#show'
   end
