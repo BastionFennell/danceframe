@@ -10,6 +10,9 @@ Router.map(function() {
     this.route('show', {path: "show/:id"});
     this.route('new', {path: "new/:id"});
   });
+  this.route('profile', function() {
+    this.route('show', {path: "/:id"});
+  });
 });
 
 export default Router;
