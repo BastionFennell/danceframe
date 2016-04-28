@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  root 'application#index'
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  namespace :api do
+    get 'events/new' => 'events#create'
+    get 'users/:id' => 'users#show'
+
+    jsonapi_resources :events
+    jsonapi_resources :covers
+    jsonapi_resources :users
+
+    get 'facebook-events' => 'facebook_events#show'
+  end
+
+  mount_ember_app :frontend, to: "/"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
