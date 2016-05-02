@@ -8,5 +8,6 @@ for app in "ember-app"; do
   cd $app &&
     npm install &&
     $bower install &&
-    cd -
+    cd - &&
+	cd ..
 done
