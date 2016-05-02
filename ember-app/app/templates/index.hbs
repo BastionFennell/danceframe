@@ -15,7 +15,7 @@
   <div class="row primary featured">
 		<h2> Featured Event </h2>
     <div class="col-sm-8">
-      <h3> {{model.name}} </h3>
+      <h3> {{model.firstObject.name}} </h3>
       <p>
       We here at DanceFrame feel that MadJam really embodies everything we love about West Coast Swing.
       Top instructors, great pros, incredible social dancing, everything you could ever want at a competition!
@@ -24,11 +24,11 @@
     </div>
     <div class="col-sm-4 img-frame">
       <span class="center-helper"></span>
-      <img src={{model.cover.source}} alt="{{model.name}}">
+      <img src={{model.firstObject.cover.source}} alt="{{model.firstObject.name}}">
     </div>
   </div>
   <div class="row upcoming">
-    {{bootstrap-carousel}}
+    {{bootstrap-carousel items=model}}
   </div>
   <div class="row faq">
     <h3 class="question">

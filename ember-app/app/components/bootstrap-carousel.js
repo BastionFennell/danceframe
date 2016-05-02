@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   items: [{active: true}, {active: false}, {active: false}],
+  init: function() {
+    this._super(...arguments);
+    this.set('items.firstObject.active', true);
+  },
 
   didInsertElement: function() {
     console.log("init");

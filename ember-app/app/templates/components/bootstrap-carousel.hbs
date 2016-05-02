@@ -10,9 +10,12 @@
   <div class="carousel-inner" role="listbox">
     {{#each items as |item|}}
       <div class="item {{if item.active 'active'}}">
-        <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/12813973_1029577450432208_479867144164926761_n.png?oh=2c0d5f86b7297ac881801a923839ef42&oe=5799E298" alt="...">
+        <img src="{{item.cover.source}}" alt="...">
         <div class="carousel-caption">
-        ...
+          <p>
+            {{item.name}}
+          </p>
+          <strong>{{moment-from-now item.startTime}}</strong>
         </div>
       </div>
     {{/each}}
