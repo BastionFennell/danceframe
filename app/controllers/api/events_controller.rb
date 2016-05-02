@@ -43,6 +43,7 @@ class Api::EventsController < ApplicationController
     event.cover = cover;
     event.save();
 
-    head :ok
+    event_resources_json = JSONAPI::ResourceSerializer.new(Api::EventResource).serialize_to_hash(Api::EventResource.new(event, nil))
+    render json: event_resources_json
   end
 end
