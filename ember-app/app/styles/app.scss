@@ -11,6 +11,36 @@ body {
   margin-bottom: 0px;
 }
 
+.navbar-right {
+  margin-right: 0;
+}
+
+.navbar-logout {
+  vertical-align: middle;
+  display: inline-block;
+
+  button {
+    margin-top: 5px;
+  }
+}
+
+.navbar .user-profile {
+  margin-top: 4px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+
+  span {
+    margin-right: 5px;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .navbar.navbar-default .navbar-brand {
   color: $text-primary;
   transition: text-shadow 0.3s;

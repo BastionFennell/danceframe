@@ -10,16 +10,29 @@
         </button>
         {{#link-to "index" classNames='navbar-brand'}} DanceFrame {{/link-to}}
       </div>
-      <div class="collapse navbar-collapse navbar-right">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href='#'>Events</a>
-          </li>
-          <li>
-            <a href='#'>Profile</a>
-          </li>
-        </ul>
-      </div>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href='#'>Events</a>
+        </li>
+        <li>
+          <a href='#'>Profile</a>
+        </li>
+      </ul>
+      {{#if auth.user}}
+        <div class="navbar-right">
+          <a href="users/sign_out" class="navbar-logout"><button class="zocial facebook">Logout</button></a>
+          {{#link-to 'users.show' 'me' classNames='user-profile btn btn-default navbar-btn'}}
+            <span>{{auth.user.name}}</span>
+            <img src='{{auth.user.image}}'>
+          {{/link-to}}
+        </div>
+      {{else}}
+        <a href="users/auth/facebook">
+          <button type="button" class="btn btn-default navbar-btn navbar-right zocial facebook">Sign in</button>
+        </a>
+      {{/if}}
     </div>
   </div>
 </nav>
