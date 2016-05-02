@@ -54,6 +54,10 @@ body {
   .primary {
     box-shadow: 0px 2px 10px 2px gray;
     background-color: $primary;
+
+    h2 {
+      text-align: center;
+    }
   }
 
   .facebook {
