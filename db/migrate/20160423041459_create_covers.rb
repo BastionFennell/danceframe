@@ -3,7 +3,7 @@ class CreateCovers < ActiveRecord::Migration
     create_table :covers do |t|
       t.integer :offset_x
       t.integer :offset_y
-      t.string :source
+      t.text :source
       t.integer :facebook_id
       t.belongs_to :event, index: true
 
