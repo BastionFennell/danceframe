@@ -1,7 +1,48 @@
 @import 'variables';
 
-body {
-  background-color: $primary;
+$row-height: 250px;
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.landing-index {
+  .primary {
+    box-shadow: 0px 2px 10px 2px gray;
+    background-color: $primary;
+  }
+
+  .facebook {
+    text-align: center;
+    padding-top: 115px;
+  }
+
+  .featured {
+    .img-frame {
+      height: $row-height;;
+    }
+
+    .center-helper {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    img {
+      max-height: 90%;
+      max-width: 90%;
+    }
+  }
+
+  .faq {
+    color: $text-secondary;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  .row {
+    min-height: $row-height;
+  }
 }
 
 .description {

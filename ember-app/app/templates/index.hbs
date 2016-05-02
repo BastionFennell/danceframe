@@ -1,1 +1,27 @@
-Test
+<div class="landing-index">
+  <div class="row facebook">
+    Log in with Facebook!
+  </div>
+  <div class="row primary featured">
+    <div class="col-xs-8">
+      <h2> Featured Event - {{model.name}} </h2>
+      <p>
+      We here at DanceFrame feel that MadJam really embodies everything we love about West Coast Swing.
+      Top instructors, great pros, incredible social dancing, everything you could ever want at a competition!
+      Sign up now for MadJam 2017! (link to event page)
+      </p>
+    </div>
+    <div class="col-xs-4 img-frame">
+      <span class="center-helper"></span>
+      <img src={{model.cover.source}} alt="{{model.name}}">
+    </div>
+  </div>
+  <div class="row faq">
+    <h3 class="question">
+      What is DanceFrame?
+    </h3>
+    <p class="answer">
+      We will all know in time.
+    </p>
+  </div>
+</div>
