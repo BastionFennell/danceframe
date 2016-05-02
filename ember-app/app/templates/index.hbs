@@ -2,8 +2,14 @@
   <div class="row facebook">
     <img src='assets/images/dance-background.jpg' class="header-background">
     <div class='header-foreground'>
-      <h2>Log in with Facebook!</h2>
-      <a href="users/auth/facebook"><button class="zocial facebook">Login with Facebook</button></a>
+      {{#if auth.user}}
+        <h1>Welcome {{auth.user.name}}</h1>
+        <h2>Search for upcoming events!</h2>
+        <a href="users/sign_out"><button class="zocial facebook">Logout of Danceframe</button></a>
+      {{else}}
+        <h2>Log in with Facebook!</h2>
+        <a href="users/auth/facebook"><button class="zocial facebook">Login with Facebook</button></a>
+      {{/if}}
     </div>
   </div>
   <div class="row primary featured">
