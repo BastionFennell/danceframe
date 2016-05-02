@@ -242,9 +242,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  CONFIG = YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]
-  APP_ID = CONFIG['app_id']
-  SECRET = CONFIG['secret_key']
+  APP_ID = ENV['FB_APP_ID']
+  SECRET = ENV['FB_SECRET_KEY']
 
   config.omniauth :facebook, APP_ID, SECRET
 
