@@ -7,10 +7,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('events', function() {
-    this.route('show', {path: "show/:id"});
+    this.route('show', {path: "/:id"});
     this.route('new', {path: "new/:id"});
   });
-  this.route('profile', function() {
+  this.route('users', function() {
     this.route('show', {path: "/:id"});
   });
 });
