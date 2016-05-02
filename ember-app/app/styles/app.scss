@@ -1,9 +1,23 @@
 @import 'variables';
+@import 'zocial';
 
 $row-height: 250px;
 
+body {
+  padding-top: 50px;
+}
+
 .navbar {
   margin-bottom: 0px;
+}
+
+.navbar.navbar-default .navbar-brand {
+  color: $text-primary;
+  transition: text-shadow 0.3s;
+
+  &:hover {
+    text-shadow: 1px 1px 2px gray;
+  }
 }
 
 .landing-index {
@@ -14,7 +28,23 @@ $row-height: 250px;
 
   .facebook {
     text-align: center;
-    padding-top: 115px;
+    position: relative;
+
+    .header-foreground {
+      position: absolute;
+      top: 40%;
+      text-align: center;
+      width: 100%;
+      color: white;
+      text-shadow: black 0 0 4px;
+    }
+
+    .header-background {
+      max-width: 100%;
+      opacity: 0.9;
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+    }
   }
 
   .featured {

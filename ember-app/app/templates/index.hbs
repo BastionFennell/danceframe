@@ -1,9 +1,13 @@
 <div class="landing-index">
   <div class="row facebook">
-    Log in with Facebook!
+    <img src='assets/images/dance-background.jpg' class="header-background">
+    <div class='header-foreground'>
+      <h2>Log in with Facebook!</h2>
+      <a href="users/auth/facebook"><button class="zocial facebook">Login with Facebook</button></a>
+    </div>
   </div>
   <div class="row primary featured">
-    <div class="col-xs-8">
+    <div class="col-sm-8">
       <h2> Featured Event - {{model.name}} </h2>
       <p>
       We here at DanceFrame feel that MadJam really embodies everything we love about West Coast Swing.
@@ -11,7 +15,7 @@
       Sign up now for MadJam 2017! (link to event page)
       </p>
     </div>
-    <div class="col-xs-4 img-frame">
+    <div class="col-sm-4 img-frame">
       <span class="center-helper"></span>
       <img src={{model.cover.source}} alt="{{model.name}}">
     </div>
