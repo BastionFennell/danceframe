@@ -12,10 +12,12 @@
       <div class="item {{if item.active 'active'}}">
         <img src="{{item.cover.source}}" alt="...">
         <div class="carousel-caption">
-          <p>
-            {{item.name}}
-          </p>
-          <strong>{{moment-from-now item.startTime}}</strong>
+          {{#link-to 'events.show' item}}
+            <p>
+              {{item.name}}
+            </p>
+            <strong>{{moment-from-now item.startTime}}</strong>
+          {{/link-to}}
         </div>
       </div>
     {{/each}}
