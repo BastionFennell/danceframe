@@ -27,8 +27,37 @@
       <img src={{model.firstObject.cover.source}} alt="{{model.firstObject.name}}">
     </div>
   </div>
-  <div class="row upcoming">
-    {{bootstrap-carousel items=model}}
+  <div class="row upcoming hidden-sm hidden-xs">
+    <div class="row">
+      {{#each model as |event|}}
+        <div class="col-md-4">
+        {{#link-to "events.show" event}}
+          <img src="{{event.cover.source}}" class="thumbnail">
+        {{/link-to}}
+        </div>
+      {{/each}}
+    </div>
+    <div class="row event-description">
+      {{#each model as |event|}}
+        <div class="col-md-4">
+        {{#link-to "events.show" event}}
+          <h4>{{event.name}}</h4>
+          {{moment-from-now event.startTime}}
+        {{/link-to}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row upcoming hidden-md hidden-lg hidden-xl">
+    {{#each model as |event|}}
+      <div class="col-md-4">
+        {{#link-to "events.show" event}}
+        <img src="{{event.cover.source}}" class="thumbnail">
+        <h4>{{event.name}}</h4>
+        {{moment-from-now event.startTime}}
+      {{/link-to}}
+      </div>
+    {{/each}}
   </div>
   <div class="row faq">
     <h3 class="question">
