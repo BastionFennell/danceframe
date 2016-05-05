@@ -174,6 +174,59 @@ body {
   }
 }
 
+.for-dancers {
+  border-bottom: 2px dashed #AAAAAA;
+  padding-bottom: 20px;
+
+  .cta {
+    text-align: center;
+
+    h2 {
+      padding: 0px;
+    }
+  }
+
+  .for-dancers-icon {
+    padding-top: 5%;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    font-size: 25px;
+  }
+
+  li {
+    padding-bottom: 20px;
+  }
+
+  .glyphicon-calendar, .glyphicon-bullhorn, .glyphicon-user {
+    font-size: 25vw;
+    color: #A3E2E3;
+  }
+
+  .glyphicon-check {
+    font-size: 40px;
+    color: #81EB9D;
+    vertical-align: middle;
+  }
+
+  .checklist {
+    vertical-align: middle;
+  }
+
+  em {
+    font-style: normal;
+    color: #A3E2E3;
+  }
+}
+
 .landing-index {
   .primary {
     box-shadow: 0px 2px 10px 2px gray;
@@ -211,10 +264,6 @@ body {
   .featured {
     position: relative;
     z-index: 2;
-
-    .row {
-      margin: 0px;
-    }
 
     .glyphicon-hand-right {
       color: white;
