@@ -136,6 +136,11 @@ body {
     color: $text-secondary;
     font-size: 40px;
   }
+
+  em, span {
+    font-style: normal;
+    color: #A3E2E3;
+  }
 }
 
 .gallery-intro {
@@ -163,11 +168,6 @@ body {
 
 .begin-description {
   text-align: center;
-
-  em, span {
-    font-style: normal;
-    color: #A3E2E3;
-  }
 
   h2 {
     font-size: 60px;
