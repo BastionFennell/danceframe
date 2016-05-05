@@ -5,66 +5,173 @@
       {{#if auth.user}}
         <h1>Welcome {{auth.user.name}}</h1>
         <h2>Search for upcoming events!</h2>
-        <a href="users/sign_out"><button class="zocial facebook">Logout of Danceframe</button></a>
+        <a href="users/sign_out"><button class="zocial facebook">Log out of Danceframe</button></a>
       {{else}}
         <h2>Log in with Facebook!</h2>
-        <a href="users/auth/facebook"><button class="zocial facebook">Login with Facebook</button></a>
+        <a href="users/auth/facebook"><button class="zocial facebook">Log in with Facebook</button></a>
       {{/if}}
     </div>
   </div>
-  <div class="row primary featured">
-		<h2> Featured Event </h2>
-    <div class="col-sm-8">
-      <h3> {{model.firstObject.name}} </h3>
-      <p>
-      We here at DanceFrame feel that MadJam really embodies everything we love about West Coast Swing.
-      Top instructors, great pros, incredible social dancing, everything you could ever want at a competition!
-      Sign up now for MadJam 2017! (link to event page)
-      </p>
-    </div>
-    <div class="col-sm-4 img-frame">
-      <span class="center-helper"></span>
-      <img src={{model.firstObject.cover.source}} alt="{{model.firstObject.name}}">
-    </div>
-  </div>
-  <div class="row upcoming hidden-sm hidden-xs">
-    <div class="row">
-      {{#each model as |event|}}
-        <div class="col-md-4">
-        {{#link-to "events.show" event}}
-          <img src="{{event.cover.source}}" class="thumbnail">
-        {{/link-to}}
-        </div>
-      {{/each}}
-    </div>
-    <div class="row event-description">
-      {{#each model as |event|}}
-        <div class="col-md-4">
-        {{#link-to "events.show" event}}
-          <h4>{{event.name}}</h4>
-          {{moment-from-now event.startTime}}
-        {{/link-to}}
-        </div>
-      {{/each}}
+  <div class="row top-description">
+
+		<div class="col-md-4 event-frame">
+			<div class="framed">
+				<h3> Event </h3>
+				<div class="row">
+					<div class="col-md-4">
+						<span class="glyphicon glyphicon-tree-conifer"></span>
+					</div>
+					<div class="col-md-8">
+						<div class="filler"></div>
+						<div class="filler"></div>
+						<div class="filler"></div>
+					</div>
+				</div>
+				<div class="filler"></div>
+				<div class="filler"></div>
+			</div>
+		</div>
+    <div class="col-md-8">
+      <h2> How much time do you waste keeping track of your dance events? </h2>
+      <ul>
+        <li><span class="glyphicon glyphicon-time"></span>
+          Did you remember to buy the weekend pass?
+        </li>
+        <li><span class="glyphicon glyphicon-time"></span>
+          Is there still room in the hotel block?
+        </li>
+        <li><span class="glyphicon glyphicon-time"></span>
+          Do you know how you're getting there?
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="row upcoming hidden-md hidden-lg hidden-xl">
-    {{#each model as |event|}}
-      <div class="col-md-4">
-        {{#link-to "events.show" event}}
-        <img src="{{event.cover.source}}" class="thumbnail">
-        <h4>{{event.name}}</h4>
-        {{moment-from-now event.startTime}}
-      {{/link-to}}
+  <div class="row what-if">
+    <h2> What if <em>someone else</em> kept track of everything for you? </h2>
+  </div>
+  <div class="row begin-description">
+    <h2>
+      DanceFrame
+    </h2>
+  </div>
+  <div class="row gallery-intro">
+    <h3> Just add the events your interested in to your '<em>Gallery</em>' and let us keep track of the details for you! </h3>
+
+    <div class="row gallery-row">
+      <div class="col-md-4 event-frame">
+        <div class="framed">
+          <h3> Event </h3>
+          <div class="row">
+            <div class="col-md-4">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+            </div>
+            <div class="col-md-8">
+              <div class="filler"></div>
+              <div class="filler"></div>
+              <div class="filler"></div>
+            </div>
+          </div>
+          <div class="filler"></div>
+          <div class="filler"></div>
+        </div>
       </div>
-    {{/each}}
+
+      <div class="col-md-4 event-frame">
+        <div class="framed">
+          <h3> Event </h3>
+          <div class="row">
+            <div class="col-md-4">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+            </div>
+            <div class="col-md-8">
+              <div class="filler"></div>
+              <div class="filler"></div>
+              <div class="filler"></div>
+            </div>
+          </div>
+          <div class="filler"></div>
+          <div class="filler"></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 event-frame">
+        <div class="framed">
+          <h3> Event </h3>
+          <div class="row">
+            <div class="col-md-4">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+            </div>
+            <div class="col-md-8">
+              <div class="filler"></div>
+              <div class="filler"></div>
+              <div class="filler"></div>
+            </div>
+          </div>
+          <div class="filler"></div>
+          <div class="filler"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gallery-row">
+      <div class="col-md-4 event-frame">
+        <div class="framed">
+          <h3> Event </h3>
+          <div class="row">
+            <div class="col-md-4">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+            </div>
+            <div class="col-md-8">
+              <div class="filler"></div>
+              <div class="filler"></div>
+              <div class="filler"></div>
+            </div>
+          </div>
+          <div class="filler"></div>
+          <div class="filler"></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 event-frame">
+        <div class="framed">
+          <h3> Event </h3>
+          <div class="row">
+            <div class="col-md-4">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+            </div>
+            <div class="col-md-8">
+              <div class="filler"></div>
+              <div class="filler"></div>
+              <div class="filler"></div>
+            </div>
+          </div>
+          <div class="filler"></div>
+          <div class="filler"></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 event-frame">
+        <div class="framed">
+          <h3> Event </h3>
+          <div class="row">
+            <div class="col-md-4">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+            </div>
+            <div class="col-md-8">
+              <div class="filler"></div>
+              <div class="filler"></div>
+              <div class="filler"></div>
+            </div>
+          </div>
+          <div class="filler"></div>
+          <div class="filler"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row faq">
-    <h3 class="question">
-      What is DanceFrame?
-    </h3>
-    <p class="answer">
-      We will all know in time.
-    </p>
+  <div class="row try-now">
+    <h2> Log in now to try it out! </h2>
+    <a href="users/auth/facebook"><button class="zocial facebook">Log in with Facebook</button></a>
   </div>
 </div>
+
