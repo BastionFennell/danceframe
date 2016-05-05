@@ -227,6 +227,26 @@ body {
   }
 }
 
+.event-search {
+  border-bottom: 2px dashed #AAAAAA;
+  text-align: center;
+  padding-bottom: 70px;
+  padding-top: 50px;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+
+  .row {
+    padding-bottom: 10px;
+  }
+
+  color: #A3E2E3;
+  background: #727272;
+}
+
 .landing-index {
   .primary {
     box-shadow: 0px 2px 10px 2px gray;
