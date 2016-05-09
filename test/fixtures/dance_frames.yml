@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PreEvent_id: 
+  Event_id: 
+  User_id: 
+
+two:
+  PreEvent_id: 
+  Event_id: 
+  User_id: 

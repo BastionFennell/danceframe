@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502023256) do
+ActiveRecord::Schema.define(version: 20160509203344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20160502023256) do
 
   add_index "covers", ["event_id"], name: "index_covers_on_event_id", using: :btree
 
+  create_table "dance_frames", force: true do |t|
+    t.integer  "PreEvent_id"
+    t.integer  "Event_id"
+    t.integer  "User_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dance_frames", ["Event_id"], name: "index_dance_frames_on_Event_id", using: :btree
+  add_index "dance_frames", ["PreEvent_id"], name: "index_dance_frames_on_PreEvent_id", using: :btree
+  add_index "dance_frames", ["User_id"], name: "index_dance_frames_on_User_id", using: :btree
+
   create_table "events", force: true do |t|
     t.text     "name"
     t.text     "description"
@@ -40,6 +52,11 @@ ActiveRecord::Schema.define(version: 20160502023256) do
   end
 
   add_index "events", ["cover_id"], name: "index_events_on_cover_id", using: :btree
+
+  create_table "pre_events", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.text     "email",                  default: "", null: false
