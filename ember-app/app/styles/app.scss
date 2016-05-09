@@ -206,7 +206,7 @@ body {
     padding-bottom: 20px;
   }
 
-  .glyphicon-calendar, .glyphicon-bullhorn, .glyphicon-user {
+  .for-dancers-icon .glyphicon {
     font-size: 25vw;
     color: #A3E2E3;
   }
@@ -238,13 +238,17 @@ body {
   text-align: center;
   padding-top: 30px;
   padding-bottom: 20px;
+  color: #A3E2E3;
+  background: #727272;
+
+  a {
+    color: #A3E2E3;
+  }
 
   .row {
     padding-bottom: 10px;
   }
 
-  color: #A3E2E3;
-  background: #727272;
 }
 
 .landing-index {
