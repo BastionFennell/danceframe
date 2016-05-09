@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509203344) do
+ActiveRecord::Schema.define(version: 20160509203659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,10 @@ ActiveRecord::Schema.define(version: 20160509203344) do
   create_table "pre_events", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "danceframe_id"
   end
+
+  add_index "pre_events", ["danceframe_id"], name: "index_pre_events_on_danceframe_id", using: :btree
 
   create_table "users", force: true do |t|
     t.text     "email",                  default: "", null: false
