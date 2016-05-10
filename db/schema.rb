@@ -29,16 +29,16 @@ ActiveRecord::Schema.define(version: 20160509203659) do
   add_index "covers", ["event_id"], name: "index_covers_on_event_id", using: :btree
 
   create_table "dance_frames", force: true do |t|
-    t.integer  "PreEvent_id"
-    t.integer  "Event_id"
-    t.integer  "User_id"
+    t.integer  "pre_event_id"
+    t.integer  "event_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "dance_frames", ["Event_id"], name: "index_dance_frames_on_Event_id", using: :btree
-  add_index "dance_frames", ["PreEvent_id"], name: "index_dance_frames_on_PreEvent_id", using: :btree
-  add_index "dance_frames", ["User_id"], name: "index_dance_frames_on_User_id", using: :btree
+  add_index "dance_frames", ["event_id"], name: "index_dance_frames_on_event_id", using: :btree
+  add_index "dance_frames", ["pre_event_id"], name: "index_dance_frames_on_pre_event_id", using: :btree
+  add_index "dance_frames", ["user_id"], name: "index_dance_frames_on_user_id", using: :btree
 
   create_table "events", force: true do |t|
     t.text     "name"

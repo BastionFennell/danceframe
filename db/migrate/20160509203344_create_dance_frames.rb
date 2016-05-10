@@ -1,9 +1,9 @@
 class CreateDanceFrames < ActiveRecord::Migration
   def change
     create_table :dance_frames do |t|
-      t.references :PreEvent, index: true
-      t.references :Event, index: true
-      t.references :User, index: true
+      t.references :pre_event, index: true
+      t.references :event, index: true
+      t.references :user, index: true
 
       t.timestamps
     end

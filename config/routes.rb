@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     jsonapi_resources :events
     jsonapi_resources :covers
     jsonapi_resources :users
+    jsonapi_resources :dance_frames
+    jsonapi_resources :pre_events
 
     get 'facebook-events' => 'facebook_events#show'
   end

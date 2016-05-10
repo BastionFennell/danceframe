@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('users', function() {
     this.route('show', {path: "/:id"});
   });
+  this.route('gallery');
 });
 
 export default Router;

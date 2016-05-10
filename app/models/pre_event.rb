@@ -1,3 +1,3 @@
 class PreEvent < ActiveRecord::Base
-  belongs_to :danceframe
+  belongs_to :dance_frame
 end

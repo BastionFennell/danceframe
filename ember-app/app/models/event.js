@@ -6,5 +6,6 @@ export default DS.Model.extend({
   facebookId: DS.attr('number'),
   cover: DS.belongsTo('cover'),
   startTime: DS.attr(),
-  endTime: DS.attr()
+  endTime: DS.attr(),
+  danceFrames: DS.hasMany('danceFrame')
 });
