@@ -1,0 +1,5 @@
+{{#each fullTodo as |todo index|}}
+  <div>
+    {{todo.todo}}: <input type="checkbox" checked={{todo.progress}} {{action 'toggleProgress' index danceframe}} />
+  </div>
+{{/each}}

@@ -3,6 +3,20 @@
 
 $row-height: 250px;
 
+.header-background {
+  max-width: 100%;
+  opacity: 0.9;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.cover-photo {
+  width: 828px;
+  height: 315px;
+  background-size: 100%;
+}
+
+
 body {
   padding-top: 50px;
 }
@@ -276,13 +290,6 @@ body {
       color: white;
       text-shadow: black 0 0 4px;
     }
-
-    .header-background {
-      max-width: 100%;
-      opacity: 0.9;
-      filter: blur(8px);
-      -webkit-filter: blur(8px);
-    }
   }
 
   .featured {
@@ -356,4 +363,71 @@ body {
 .carousel-inner img {
   margin-left: auto;
   margin-right: auto;
+}
+
+.header {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.separated-top {
+  border-top: 2px dashed #AAAAAA;
+}
+
+.separated-bottom {
+  border-bottom: 2px dashed #AAAAAA;
+}
+
+.gallery-picture {
+  width: 100%;
+}
+
+.gallery-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.gallery-title {
+  margin-bottom: 5px;
+}
+
+.gallery-date {
+  margin-bottom: 10px;
+}
+
+.header .glyphicon {
+  font-size: 100px;
+  color: $primary;
+}
+
+.gallery-header {
+  padding-top: 50px;
+}
+
+.first-frame {
+  background-color: $primary;
+}
+
+.banner-ad {
+  text-align: center;
+
+  .ad {
+    margin-left: auto;
+    margin-right: auto;
+    width: 728px;
+    height: 90px;
+    background-color: $accent;
+  }
+}
+
+
+.event-show-header {
+  .cover-photo {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.event-show-ad {
+  padding-top: 20px;
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509203659) do
+ActiveRecord::Schema.define(version: 20160519223258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160509203659) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "cover_id"
+    t.text     "todo_list",             array: true
   end
 
   add_index "events", ["cover_id"], name: "index_events_on_cover_id", using: :btree
@@ -56,10 +57,11 @@ ActiveRecord::Schema.define(version: 20160509203659) do
   create_table "pre_events", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "danceframe_id"
+    t.integer  "dance_frame_id"
+    t.boolean  "todo_progress",  array: true
   end
 
-  add_index "pre_events", ["danceframe_id"], name: "index_pre_events_on_danceframe_id", using: :btree
+  add_index "pre_events", ["dance_frame_id"], name: "index_pre_events_on_dance_frame_id", using: :btree
 
   create_table "users", force: true do |t|
     t.text     "email",                  default: "", null: false

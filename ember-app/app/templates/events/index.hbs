@@ -1,1 +1,7 @@
-{{outlet}}
+{{#each model as |event|}}
+  {{#link-to 'events.show' event}}
+    <div>
+      {{event.name}}
+    </div>
+  {{/link-to}}
+{{/each}}

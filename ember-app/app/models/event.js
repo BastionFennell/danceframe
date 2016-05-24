@@ -7,5 +7,6 @@ export default DS.Model.extend({
   cover: DS.belongsTo('cover'),
   startTime: DS.attr(),
   endTime: DS.attr(),
-  danceFrames: DS.hasMany('danceFrame')
+  danceFrames: DS.hasMany('danceFrame'),
+  todoList: DS.attr()
 });

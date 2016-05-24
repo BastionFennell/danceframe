@@ -1,4 +1,14 @@
-<img src="{{model.cover.source}}">
+<div class="event-show-header">
+  <div class="cover-photo" style="background-image: url('{{model.cover.source}}'); background-position-y: {{model.cover.offsetY}}%;">
+  </div>
+</div>
+<div class="event-show-ad">
+  {{banner-ad}}
+</div>
 <h1>{{model.name}}</h1>
 <p class="description">{{model.description}}</p>
-<button {{action 'addEvent' model}}> Add to Gallery? </button>
+{{#if notInGallery}}
+  <button {{action 'addEvent' model}}> Add to Gallery? </button>
+{{else}}
+  <div>This event is already in your gallery</div>
+{{/if}}

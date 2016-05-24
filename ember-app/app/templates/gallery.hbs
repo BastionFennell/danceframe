@@ -1,5 +1,63 @@
-{{#each danceframes as |danceframe|}}
-<div>{{danceframe.event.name}}</div>
-{{/each}}
+<div class="header">
+  <h1> Dance Gallery </h1>
+</div>
 
-{{model}}
+<div class="row header gallery-header">
+  <div class="col-md-4">
+    <span class="glyphicon glyphicon-th"></span>
+    <h2> {{danceframes.length}} DanceFrames in Your Gallery</h2>
+  </div>
+  <div class="col-md-4">
+    <span class="glyphicon glyphicon-time"></span>
+    <h2> Next Event is {{moment-from-now firstFrame.event.startTime}}</h2>
+  </div>
+  <div class="col-md-4">
+    <span class="glyphicon glyphicon-comment"></span>
+    <h2> Written 0 Reviews </h2>
+  </div>
+</div>
+
+<div class="row gallery-row separated-bottom first-frame">
+  <div class="col-md-4">
+    {{#link-to 'events.show' firstFrame.event}}
+      <img src="{{firstFrame.event.cover.source}}" class="gallery-picture">
+    {{/link-to}}
+  </div>
+  <div class="col-md-8">
+    {{#link-to 'events.show' firstFrame.event}}
+      <h4 class="gallery-title"> {{firstFrame.event.name}} </h4>
+    {{/link-to}}
+
+    <strong class="gallery-date">
+      {{moment-format firstFrame.event.startTime 'MM/DD/YYYY'}} - 
+      {{moment-format firstFrame.event.endTime 'MM/DD/YYYY'}}
+    </strong>
+
+    {{todo-list danceframe = firstFrame toggleProgress = 'toggleProgress'}}
+  </div>
+</div>
+<div class="row gallery-row separated-bottom">
+  {{banner-ad}}
+</div>
+
+{{#each danceframesWithoutFirst as |danceframe|}}
+  <div class="row gallery-row">
+    <div class="col-md-4">
+      {{#link-to 'events.show' danceframe.event}}
+        <img src="{{danceframe.event.cover.source}}" class="gallery-picture">
+      {{/link-to}}
+    </div>
+    <div class="col-md-8">
+      {{#link-to 'events.show' danceframe.event}}
+        <h4 class="gallery-title"> {{danceframe.event.name}} </h4>
+      {{/link-to}}
+
+      <strong class="gallery-date">
+        {{moment-format danceframe.event.startTime 'MM/DD/YYYY'}} - 
+        {{moment-format danceframe.event.endTime 'MM/DD/YYYY'}}
+      </strong>
+
+      {{todo-list danceframe = danceframe toggleProgress = 'toggleProgress'}}
+    </div>
+  </div>
+{{/each}}
