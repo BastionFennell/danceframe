@@ -405,7 +405,8 @@ body {
 }
 
 .first-frame {
-  background-color: $primary;
+  border-top: 5px dashed $primary;
+  margin-top: 20px;
 }
 
 .banner-ad {
@@ -434,4 +435,11 @@ body {
 
 .row.blocked {
   text-align: center;
+}
+
+.cover-photo-frame {
+  position: relative;
+  box-sizing: border-box;
+  padding: 20%;
+  background-size: 100%;
 }

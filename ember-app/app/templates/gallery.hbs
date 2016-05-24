@@ -20,7 +20,7 @@
 <div class="row gallery-row separated-bottom first-frame">
   <div class="col-md-4">
     {{#link-to 'events.show' firstFrame.event}}
-      <img src="{{firstFrame.event.cover.source}}" class="gallery-picture">
+      {{cover-photo-frame cover = firstFrame.event.cover}}
     {{/link-to}}
   </div>
   <div class="col-md-8">
@@ -44,7 +44,7 @@
   <div class="row gallery-row">
     <div class="col-md-4">
       {{#link-to 'events.show' danceframe.event}}
-        <img src="{{danceframe.event.cover.source}}" class="gallery-picture">
+        {{cover-photo-frame cover = danceframe.event.cover}}
       {{/link-to}}
     </div>
     <div class="col-md-8">
