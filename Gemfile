@@ -49,3 +49,4 @@ ruby "2.1.2"
 gem 'puma'
 
 gem "rails_12factor", group: [:staging, :production]
+gem 'heroku-deflater', group: :production
