@@ -1,0 +1,7 @@
+{{#each emberTodoList as |todo index|}}
+  <div>
+    {{todo-input value = todo index = index updateTodo = "updateTodo"}} <button {{action 'removeTodo' index}}> Remove </button>
+  </div>
+{{/each}}
+<button {{action 'addTodo'}}>Add a ToDo</button>
+<button {{action 'saveTodoList'}}>Save ToDo List</button>
