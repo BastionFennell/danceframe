@@ -1,8 +1,11 @@
 class Api::DanceFramesController < JSONAPI::ResourceController
   def create
+    event = Event.find(params['data']['relationships']['event']['data']['id'])
+
     frame = DanceFrame.create({
-      event_id: params['data']['relationships']['event']['data']['id'],
-      user_id: params['data']['relationships']['user']['data']['id']
+      event_id: event,
+      user_id: params['data']['relationships']['user']['data']['id'],
+      sort_id: event.start_time
     });
 
     frame.save
