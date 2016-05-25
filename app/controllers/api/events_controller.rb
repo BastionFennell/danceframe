@@ -12,14 +12,6 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    p "======================"
-    p "======================"
-    p "======================"
-    p "======================"
-    p "======================"
-    p "======================"
-    p "======================"
-    p "======================"
     facebook_event = @graph.get_object(params[:data][:attributes]["facebook-id"], {fields: ['name', 'description', 'end_time', 'start_time', 'cover']})
     event = Event.create({
       name: facebook_event["name"],

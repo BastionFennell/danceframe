@@ -9,13 +9,13 @@ export default Ember.Component.extend({
     var fullTodo = [];
     var i;
 
-    if( !this.get("progress") || !this.get("todo"))
+    if(!this.get("todo"))
       return
 
     for(i = 0; i < this.get("todo.length"); i++){
       fullTodo[i] = {
         todo: this.get("todo").objectAt(i),
-        progress: this.get("progress").objectAt(i) || false
+        progress: this.get("progress") ? this.get("progress").objectAt(i) : false
       };
     }
     return fullTodo;
